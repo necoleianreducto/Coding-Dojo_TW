@@ -24,14 +24,15 @@ public class Hand {
     values.put("T", 10);
   }
 
-  public classifyHand(){
+  public void classifyHand(){
+    List<String> sameCards = new ArrayList<>();
+      for (String card : cards) {
+
+      }
 
   }
 
   public String compareHand(Hand hand) {
-    //int cardA = values.get(getHighCard(cards).substring(0, 1)) != null ? values.get(getHighCard(cards).substring(0, 1)) : Integer.parseInt(getHighCard(cards).substring(0, 1));
-    //int cardB = values.get(getHighCard(hand.getCards()).substring(0, 1)) != null ? values.get(getHighCard(hand.getCards()).substring(0, 1)) : Integer.parseInt(getHighCard(hand.getCards()).substring(0, 1));
-
     int cardA = getCardValue(getHighCard(cards).substring(0, 1));
     int cardB = getCardValue(getHighCard(hand.getCards()).substring(0, 1));
 
@@ -47,8 +48,6 @@ public class Hand {
       if (result.equals("")) {
         result = card;
         } else {
-        //int cardA = values.getCardValue(result.substring(0, 1)) != null ? values.get(result.substring(0, 1)) : Integer.parseInt(result.substring(0, 1));
-        //int cardB = values.get(card.substring(0, 1)) != null ? values.get(card.substring(0, 1)) : Integer.parseInt(card.substring(0, 1));
         int cardA = getCardValue(result.substring(0, 1));
         int cardB = getCardValue(card.substring(0, 1));
 
