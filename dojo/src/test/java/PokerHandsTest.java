@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class PokerHandsTest {
-
+    //AD,JD,2C,7H,3D Highcard to KD,TS,2C,6H,3D highcard Player 1 Wins
     @Test
     public void highCardToHighCard(){
         Hand playerOne = new Hand("KD","TS","2C","6H","3D");
@@ -13,18 +13,25 @@ public class PokerHandsTest {
         assertEquals(playerOne.compareHand(playerTwo), "Lose");
     }
 
-    //    2.	one pair > high cards - done 2H 2D 5S 9C KD 2C 3H 4S 8C AH Player 1 wins
+    // one pair > high cards - done 2H 2D 5S 9C KD 2C 3H 4S 8C AH Player 1 wins
     @Test
     public void pairToHighCard(){
         Hand playerOne = new Hand("2H","2D","5S","9C","KD");
         Hand playerTwo = new Hand("2C","3H","4S","8C","AH");
+
+        assertEquals(playerOne.compareHand(playerTwo), "Win");
+    }
+
+    @Test
+    public void pairToPairCard(){
+        Hand playerOne = new Hand("2H","2D","5S","9C","KD");
+        Hand playerTwo = new Hand("3C","3H","4S","8C","AH");
+
+        assertEquals(playerOne.compareHand(playerTwo), "Lose");
     }
 }
 
-//TODO AD,JD,2C,7H,3D Highcard to KD,TS,2C,6H,3D highcard Player 1 Wins
-//Write Fail
-//Make it green
-//refactor
+
 
 //    3.	one pair higer win - done 2H 2D 5S 9C KD 3C 3H 4S 8C AH Player 2 wins
 //    4.	two pair > one pair - done 2H 2D 5S 9C KD 3C 3H 4S 4C AH Player 2 wins
