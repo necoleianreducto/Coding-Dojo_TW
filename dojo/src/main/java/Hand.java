@@ -31,6 +31,7 @@ public class Hand {
         this.values.put("T", 10);
         this.handValues.put("High Card", 1);
         this.handValues.put("Pair", 2);
+        this.handValues.put("Two Pair", 3);
         this.handType = classifyHand();
     }
 
@@ -67,8 +68,7 @@ public class Hand {
                 Map<String, Integer> pair = new HashMap<>();
                 getSameCardMap(pairList, pair);
                 int cardA = getCardValue(pair.entrySet().stream().filter(p -> p.getValue() == 2).findFirst().get().getValue().toString());
-                int cardB = 
-
+                int cardB = getCardValue(pair.entrySet().stream().filter(p -> p.getValue() == 2).findFirst().get().getValue().toString());
             }
         } else if (getHandValue(hand.getHandType()) < getHandValue(handType)) {
             return "Win";
